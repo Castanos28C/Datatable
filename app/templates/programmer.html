@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %} 
+
+{% block content %}
+{% load static %}
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="table-responsive">
+                        <table id="datatable-programmers" class="table">
+                            <caption>
+                                Programadores evaluados
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th class="centered">#</th>
+                                    <th class="centered">Nombre</th>
+                                    <th class="centered">Pais</th>
+                                    <th class="centered">Cumpleaños</th>
+                                    <th class="centered">Puntuación</th>
+                                    <th class="centered">¿Capacitado?</th>
+                                    <th class="centered">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody_programmers"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Custom JS -->
+        <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
