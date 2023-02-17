@@ -24,7 +24,7 @@ const initDataTable = async () => {
 
 const listProgrammers = async () => {
     try {
-        const response = await fetch("http://127.0.0.1:8000/app/list_programmers/");
+        const response = await fetch("https://programador.onrender.com/app/list_programmers/");
         const data = await response.json();
 
         let content = ``;
