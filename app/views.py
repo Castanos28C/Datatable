@@ -13,6 +13,12 @@ def programmer_delete(request, codigo):
     
     return redirect('/programmer/')
 
+def programmer_edit(request, codigo):
+    programmer = programmer.objects.get(codigo=codigo)
+    programmer.delete()
+    
+    return redirect('/programmer/')
+
 def programmer(request):
     return render(request, 'programmer.html')
 
