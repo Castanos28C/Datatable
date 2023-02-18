@@ -7,19 +7,11 @@ from .forms import ProgrammerForm
 def index(request):
     return render(request, 'index.html')
 
-def programmer_edit(request, programmer_id):
-    if request.method == 'GET':
-        programmer = get_object_or_404(programmer, pk=programmer_id)
-        form = ProgrammerForm(instance=programmer)
-        return render(request, 'programmer_edit.html', {'programmer': programmer, 'form': form})
-    else:
-        try:
-            programmer = get_object_or_404(programmer, pk=programmer_id)
-            form = ProgrammerForm(request.POST, instance=programmer)
-            form.save()
-            return redirect('programmer')
-        except ValueError:
-            return render(request, 'programmer_edit.html', {'programmer': programmer, 'form': form, 'error': 'Error updating task.'})
+def programmer_delete(request, codigo):
+    programmer = programmer.objects.get(codigo=codigo)
+    programmer.delete()
+    
+    return redirect('/programmer/')
 
 def programmer(request):
     return render(request, 'programmer.html')
