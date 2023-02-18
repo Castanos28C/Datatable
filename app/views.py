@@ -7,7 +7,7 @@ from .forms import ProgrammerForm
 def index(request):
     return render(request, 'index.html')
 
-def task_detail(request, programmer_id):
+def programmer_edit(request, programmer_id):
     if request.method == 'GET':
         programmer = get_object_or_404(programmer, pk=programmer_id)
         form = ProgrammerForm(instance=programmer)
