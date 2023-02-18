@@ -42,9 +42,7 @@ const listProgrammers = async () => {
                     </td>
                     <td>
                         <a href="{% url 'programmer_edit' programmer.id %}" class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></a>
-                        {% csrf_token %}
-                        <a href="{% url 'programmer_edit' programmer.id %}" class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></a>
-                        {% csrf_token %}
+                        <a href="programmer_delete/{{programmer.id}}" class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></a>
                     </td>
                 </tr>`;
         });
